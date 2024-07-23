@@ -1,5 +1,6 @@
 
-const PokemonCount = 251;
+const PokemonCount = 1025;
+var current = 0;
 var pokedex = {}; // {1 : {"name" : "bulbasaur", "img" : url, "type" : ["grass", "poison"], "desc" : "...."}}
 
 window.onload = async function() {
@@ -13,10 +14,12 @@ window.onload = async function() {
         // pokemon.classList.add("pokemon-name");
 
         // pokemon.addEventListener("click", updatePokemon);
-        document.getElementById("pokemon-list").append(pokemon);
+        //document.getElementById("pokemon-list").append(pokemon);
     }
 
     // document.getElementById("pokemon-description").innerText = pokedex[1]["desc"];
+    //displayRandom();
+    displayRandom();
     console.log(pokedex);
 }
 
@@ -35,8 +38,8 @@ async function getPokemon(num) {
     // let pokemonDesc  = await res.json();
     //console.log(pokemonDesc);
 
-    pokemonDesc = pokemonDesc["flavor_text_entries"][9]["flavor_text"];
-    pokedex[num] = {"name" : pokemonName, "img" : pokemonImg, "types" : pokemonType, "desc" : pokemonDesc}
+    //pokemonDesc = pokemonDesc["flavor_text_entries"][9]["flavor_text"];
+    pokedex[num] = {"name" : pokemonName, "img" : pokemonImg, "types" : pokemonType}
 }
 
 function updatePokemon() {
@@ -62,22 +65,56 @@ function updatePokemon() {
 
 }
 
-function displayRandom(num) {
-    let x = Math.floor((Math.random() * 151) + 1);
+function displayRandom() {
+    let x = Math.floor((Math.random() * 1025) + 1);
     document.getElementById("pokemon-img").src = pokedex[x]["img"];
+    document.getElementById("pokemon-img").classList.add("hidden");
+    current = x;
 
-    //clear previous types
     let typesDiv = document.getElementById("pokemon-types");
     while (typesDiv.firstChild) {
         typesDiv.firstChild.remove();
     }
 
-    let types = pokedex[this.id]["types"];
+    let types = pokedex[x]["types"];
     for (let i = 0; i < types.length; i++) {
         let type = document.createElement("span");
-        type.innerText = types[i]["type"]["name"].toUpperCase();
+        type.innerText = "?????";
         type.classList.add("type-box");
-        type.classList.add(types[i]["type"]["name"]); //adds background color and font color
+        type.classList.add("mystery"); //adds background color and font color
         typesDiv.append(type);
     }
 }
+
+function guess(string) {
+    let g = document.getElementById("guessbox").value;
+    if (pokedex[current]["name"] == g) {
+        document.getElementById("pokemon-img").classList.remove("hidden");
+
+        let typesDiv = document.getElementById("pokemon-types");
+
+        while (typesDiv.firstChild) {
+            typesDiv.firstChild.remove();
+        }
+    
+        let types = pokedex[current]["types"];
+        for (let i = 0; i < types.length; i++) {
+            let type = document.createElement("span");
+            type.innerText = types[i]["type"]["name"].toUpperCase();
+            type.classList.add("type-box");
+            type.classList.add(types[i]["type"]["name"]); //adds background color and font color
+            typesDiv.append(type);
+        }
+        
+    }
+// window.onkeyup = keyup;
+
+// var inputTextValue;
+// function keyup(e) {
+//     inputTextValue = e.target.value;
+    
+//     if (e.keyCode == 13) {
+//         guess(inputTextvalue);
+//     }
+// }
+}       

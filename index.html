@@ -17,16 +17,21 @@
             <h1>
                 Who's that pokemon ?
             </h1>
-            <!-- left side, display pokemon info -->
+
                 <div id="img-box">
                     <img id="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png">
                 </div>
+            
 
 
             <div id="pokemon-types">
                     <span class="type-box mystery"> ????? </span> <span class = "type-box mystery"> ????? </span>
             </div>
-                <div id="pokemon-description"></div>
+
+            <div id="guessbar">
+                <input type="text" id="guessbox">
+                <button onclick="guess()"> Guess</button>
+                <button onclick="displayRandom()"> new pokemon </button>
             </div>
             <!-- Right side, display pokemon list -->
             <!-- <div id="pokemon-list"> </div> -->
