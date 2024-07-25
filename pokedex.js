@@ -66,6 +66,8 @@ function guess() {
             type.classList.add(types[i]["type"]["name"]); //adds background color and font color
             typesDiv.append(type);
         }
+
+        setTimeout(displayRandom, 5000);
     }
 
     document.getElementById("guessbox").value = "";
