@@ -4,6 +4,13 @@ var current = 0;
 var pokedex = {}; // {1 : {"name" : "bulbasaur", "img" : url, "type" : ["grass", "poison"], "desc" : "...."}}
 
 window.onload = async function() {
+    var input = document.getElementById("guessbox")
+    input.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        guess();
+    }
+});
     displayRandom();
 }
 
@@ -36,10 +43,11 @@ async function displayRandom() {
         type.classList.add("mystery"); //adds background color and font color
         typesDiv.append(type);
     }
+
     console.log(pokedex);
 }
 
-function guess(string) {
+function guess() {
     let g = document.getElementById("guessbox").value;
     if (pokedex[current]["name"] == g) {
         document.getElementById("pokemon-img").classList.remove("hidden");
@@ -59,5 +67,6 @@ function guess(string) {
             typesDiv.append(type);
         }
     }
+
     document.getElementById("guessbox").value = "";
 }       
