@@ -17,10 +17,10 @@ window.onload = async function() {
 async function displayRandom() {
     let x = Math.floor((Math.random() * 1025) + 1);
     current = x;
-    document.getElementById("pokemon-img").src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + x.toString() + ".png"
+    document.getElementById("pokemon-img").src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + current.toString() + ".png"
     document.getElementById("pokemon-img").classList.add("hidden");
 
-    let url = "https://pokeapi.co/api/v2/pokemon/" + x.toString();
+    let url = "https://pokeapi.co/api/v2/pokemon/" + current.toString();
 
     let res = await fetch(url);
     let pokemon = await res.json();
@@ -35,7 +35,13 @@ async function displayRandom() {
         typesDiv.firstChild.remove();
     }
 
-    let types = pokedex[x]["types"];
+    // let num = document.createElement("span");
+    //     num.innerText = current.toString();
+    //     num.classList.add("type-box");
+    //     num.classList.add("mystery"); //adds background color and font color
+    //     typesDiv.append(num);
+
+    let types = pokedex[current]["types"];
     for (let i = 0; i < types.length; i++) {
         let type = document.createElement("span");
         type.innerText = "?????";
@@ -50,7 +56,14 @@ async function displayRandom() {
 function guess() {
     let g = document.getElementById("guessbox").value;
     if (pokedex[current]["name"] == g) {
-        document.getElementById("pokemon-img").classList.remove("hidden");
+        reveal();
+    }
+
+    document.getElementById("guessbox").value = "";
+}
+
+function reveal() {
+    document.getElementById("pokemon-img").classList.remove("hidden");
 
         let typesDiv = document.getElementById("pokemon-types");
 
@@ -67,8 +80,7 @@ function guess() {
             typesDiv.append(type);
         }
 
-        setTimeout(displayRandom, 5000);
-    }
+        setTimeout(displayRandom, 1000);
 
-    document.getElementById("guessbox").value = "";
-}       
+       // document.getElementById("guessbox").value = "";
+}

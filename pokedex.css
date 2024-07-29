@@ -21,7 +21,7 @@ h1 {
     margin: 0 auto;
     margin-top: 60px;
 
-    background: url("./pokeball.jpg") no-repeat;
+    background: url("pokeball.jpg");
     background-size: cover;
 
 }
