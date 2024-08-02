@@ -7,6 +7,8 @@ body {
 h1 {
     text-align: center;
     font-size: 70px;
+    margin-bottom: 20px;
+    margin-top: 20px;
     
 }
 
@@ -46,6 +48,29 @@ h1 {
     background-color: white;
     margin: 5px;
     padding: 5px;
+}
+
+#name-box {
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.name-tag {
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 5px;
+    border: 1px solid white;
+    border-radius: 10px;
+    font-size: 30px;
+    margin-bottom: 30px;
 }
 
 #img-box {
@@ -189,4 +214,11 @@ h1 {
 .mystery {
     background-color: black;
     color: lightgray;
+}
+
+.name {
+    background-color: white;
+    color: black;
+    font: comic sans;
+    font-size: 20px;
 }

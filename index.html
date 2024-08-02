@@ -18,6 +18,8 @@
                 Who's that pokemon ?
             </h1>
 
+                <div id="name-box"></div>
+
                 <div id="img-box">
                     <img id="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png">
                 </div>
@@ -30,11 +32,11 @@
 
             <div id="guessbar">
                 <input type="text" id="guessbox">
-                <!-- <button onclick="guess()"> Guess</button> -->
-                <button onclick="reveal()"> Give Up </button> 
+                <button onclick="reveal()" id="GiveUp"> Give Up </button> 
+                <div id="button-box">
+                </div>
             </div>
-            <!-- Right side, display pokemon list -->
-            <!-- <div id="pokemon-list"> </div> -->
+
         </div>
     </body>
 </html>
