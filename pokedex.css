@@ -251,7 +251,7 @@ h1 {
 }
 
 .gen1 {
-    background: url("./pokemonRed.jpeg") no-repeat;
+    background: url("./PokemonRed.jpeg") no-repeat;
     background-size: cover;
 }
 
@@ -261,7 +261,7 @@ h1 {
 }
 
 .gen3 {
-    background: url("./pokemonSapphire.jpg") no-repeat;
+    background: url("./PokemonSapphire.jpg") no-repeat;
     background-size: cover;
 }
 
