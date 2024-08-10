@@ -6,14 +6,15 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 50px;
+    font-size: 70px;
+    margin-bottom: 20px;
     margin-top: 20px;
     
 }
 
 #content-box {
-    width: 1200px;
-    height: 1200px;
+    width: 1000px;
+    height: 1000px;
     border: 10px solid lightgray;
     border-radius: 10px;
 
@@ -72,46 +73,22 @@ h1 {
     margin-bottom: 30px;
 }
 
-#BinBar {
-    height: 100px;
-    width: 1000px;
-    margin: 0 auto;
-    display: flex;
-}
-
-.gameIcon {
-    width: 100px;
-    height: 100px;
-    margin: 10px;
-}
-
-#BinBanButton {
-    height: 80px;
-    width: 80px;
-    position: absolute;
-    left: 821px;
-    top: 928px;
-    border-radius: 50%;
-    background: url("BinBan.jpg") no-repeat;
-    background-size: cover;
-}
-    
 #img-box {
     /* filter: brightness(0%); */
-    width: 400px;
-    height: 400px;
+    width: 340px;
+    height: 325px;
     border: 1px solid black;
     border-radius: 10px;
     background-color: white;
     margin: 0 auto;
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 #img-box img {
     display: block;
     margin: 0 auto;
-    width: 400px;
-    height: 400px;
+    width: 325px;
+    height: 325px;
 }
 
 .hidden {
@@ -244,54 +221,4 @@ h1 {
     color: black;
     font: comic sans;
     font-size: 20px;
-}
-
-.gen0 {
-    background: url("./pokemonA.jpg") no-repeat;
-    background-size: cover;
-}
-
-.gen1 {
-    background: url("./pokemonRed.jpeg") no-repeat;
-    background-size: cover;
-}
-
-.gen2 {
-    background: url("./PokemonGold.jpg") no-repeat;
-    background-size: cover;
-}
-
-.gen3 {
-    background: url("./pokemonSapphire.jpg") no-repeat;
-    background-size: cover;
-}
-
-.gen4 {
-    background: url("./PokemonPlatium.jpg") no-repeat;
-    background-size: cover;
-}
-
-.gen5 {
-    background: url("./PokemonWhite.png") no-repeat;
-    background-size: cover;
-}
-
-.gen6 {
-    background: url("./PokemonX.jpg") no-repeat;
-    background-size: cover;
-}
-
-.gen7 {
-    background: url("./PokemonSun.jpg") no-repeat;
-    background-size: cover;
-}
-
-.gen8 {
-    background: url("./pokemonShield.jpg") no-repeat;
-    background-size: cover;
-}
-
-.gen9 {
-    background: url("./PokemonScarlet.jpg") no-repeat;
-    background-size: cover;
 }

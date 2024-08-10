@@ -116,7 +116,7 @@ function reveal() {
 
         //Whenever pokemon is revealed, make custom new pokemon button appear
         var newP = document.createElement("button");
-        //newP.classList.add("guessbar");
+        newP.classList.add("guessbar");
         newP.innerText = "new Pokemon";
         newP.onclick = displayRandom;
         document.getElementById("button-box").append(newP);
@@ -126,88 +126,5 @@ function reveal() {
 }
 
 function BinBanModeEngage() {
-    toDel = document.getElementById("guessbar");
-    toDel.remove();
-
-    let title = document.getElementById("header");
-    title.innerText = "Hoo's dat Pohkeeman";
-
-    let BinBar = document.getElementById("bar");
-    BinBar.classList.add("BinBar")
-
-    for (let i = 0; i < 10; i++) {
-        var boutton =  document.createElement("button");
-        let name = "gen" + i.toString();
-        boutton.classList.add(name);
-        boutton.classList.add("gameIcon");
-        let fun = "binGuessing" + name;
-        boutton.onclick = eval(fun);
-        let BinBar = document.getElementById("bar");
-        BinBar.append(boutton);
-    }
-
-    let BinB = document.getElementById("BinBanButton");
-    BinB.remove();
+    
 }
-
-function binGuessinggen1() {
-    if (1 <= current && current <= 151) {
-        reveal();
-    }
-}
-
-function binGuessinggen2() {
-    if (151 < current && current < 252) {
-        reveal();
-    }
-}
-
-function binGuessinggen3() {
-    if (251 < current && current < 387) {
-        reveal();
-    }
-}
-
-function binGuessinggen4() {
-    if (386 < current && current < 494) {
-        reveal();
-    }
-}
-
-function binGuessinggen5() {
-    if (493 < current && current < 650) {
-        reveal();
-    }
-}
-
-function binGuessinggen6() {
-    if (649 < current && current < 722) {
-        reveal();
-    }
-}
-
-function binGuessinggen7() {
-    if (721 < current && current < 810) {
-        reveal();
-    }
-}
-
-function binGuessinggen8() {
-    if (809 < current && current < 899) {
-        reveal();
-    }
-}
-
-function binGuessinggen9() {
-    if (905 < current && current < 1026) {
-        reveal();
-    }
-}
-
-function binGuessinggen0() {
-    if (898 < current && current < 906) {
-        reveal();
-    }
-}
-
-

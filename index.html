@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>BinBanMode</title>
+        <title>Poke-Guesser</title>
 
         <link rel="stylesheet" href="pokedex.css">
         <script src="pokedex.js"></script>
@@ -14,7 +14,7 @@
 
         <div id="content-box">
 
-            <h1 id="header">
+            <h1>
                 Who's that pokemon ?
             </h1>
 
@@ -24,8 +24,9 @@
                     <img id="pokemon-img" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png">
                 </div>
 
-                <button onclick="BinBanModeEngage()" id="BinBanButton"></button>
-
+                <div id="hintbox">
+                    <button onclick="BinBanModeEngage()" id="BinBanButton"> BinBan </button>
+                </div>
             
 
 
@@ -33,12 +34,11 @@
                     <span class="type-box mystery"> ????? </span> <span class = "type-box mystery"> ????? </span>
             </div>
 
-            <div id ="bar"></div>
-            <div id="button-box"></div>
-
             <div id="guessbar">
-                    <input type="text" id="guessbox">
-                    <button onclick="reveal()" id="GiveUp"> Give Up </button> 
+                <input type="text" id="guessbox">
+                <button onclick="reveal()" id="GiveUp"> Give Up </button> 
+                <div id="button-box">
+                </div>
             </div>
 
         </div>
