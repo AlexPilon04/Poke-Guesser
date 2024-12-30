@@ -72,27 +72,17 @@ h1 {
     margin-bottom: 30px;
 }
 
-#BinBar {
+/* #BinBar {
     height: 100px;
     width: 1000px;
     margin: 0 auto;
     display: flex;
-}
+} */
 
 .gameIcon {
     width: 100px;
     height: 100px;
     margin: 10px;
-}
-
-#BinBanButton {
-    height: 80px;
-    width: 80px;
-    margin-left: 560px;
-    margin-top: 225px;
-    border-radius: 50%;
-    background: url("BinBan.jpg") no-repeat;
-    background-size: cover;
 }
     
 #img-box {

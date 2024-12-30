@@ -4,14 +4,15 @@ var pokedex = {}; // {1 : {"name" : "bulbasaur", "img" : url, "type" : ["grass",
 var guesser;
 
 window.onload = async function() {
-    console.log("log")
     guesser = new Guesser();
     displayRandom();
 }
 
 async function displayRandom() {
-    let x = Math.floor((Math.random() * 1025) + 1);
-    //console.log(x);
+
+    //gets random number from 1-PokemonCount
+    let x = Math.floor((Math.random() * PokemonCount) + 1);
+    
     current = x;
     guesser.updateCurrent(current);
 
@@ -27,19 +28,12 @@ async function displayRandom() {
     let pokemon = await res.json();
 
     storePokemon(pokemon);
-
     RemoveChildren("pokemon-types");
 
     let types = pokedex[current]["types"];
     for (let i = 0; i < types.length; i++) {
-        let type = document.createElement("span");
-        type.innerText = "?????";
-        type.classList.add("type-box");
-        type.classList.add("mystery");
-        typesDiv.append(type);
+        createMysteryType();
     }
-
-    console.log(pokedex);
 }
 
 function storePokemon(pokemon) {
@@ -58,6 +52,14 @@ function RemoveChildren(nodeName) {
 
 function reveal() {
     guesser.reveal();
+}
+
+function createMysteryType() {
+    let type = document.createElement("span");
+        type.innerText = "?????";
+        type.classList.add("type-box");
+        type.classList.add("mystery");
+        typesDiv.append(type);
 }
 
 
