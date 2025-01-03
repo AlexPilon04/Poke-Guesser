@@ -53,8 +53,9 @@ class Guesser {
     
             var newP = document.createElement("button");
             newP.innerText = "new Pokemon";
+            newP.name = "NewP";
             newP.onclick = displayRandom;
-            document.getElementById("button-box").append(newP);
+            document.getElementById("guessbar").append(newP);
         }
     }
 

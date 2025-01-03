@@ -17,9 +17,9 @@ async function displayRandom() {
     guesser.updateCurrent(current);
 
     RemoveChildren("name-box");
-    RemoveChildren("button-box")
-
-    document.getElementById("pokemon-img").src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + current.toString() + ".png"
+    RemoveNewPokemonButton();
+    
+    document.getElementById("pokemon-img").src = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + current.toString() + ".png";
     document.getElementById("pokemon-img").classList.add("hidden");
 
     let url = "https://pokeapi.co/api/v2/pokemon/" + current.toString();
@@ -50,16 +50,26 @@ function RemoveChildren(nodeName) {
     }
 }
 
+function RemoveNewPokemonButton() {
+    let guessbar = document.getElementById("guessbar")
+    guessbar.childNodes.forEach((child) => {
+        if (child.name == "NewP") {
+           guessbar.removeChild(child);
+        }
+    });
+}
+
 function reveal() {
     guesser.reveal();
 }
 
 function createMysteryType() {
+    let typesDiv = document.getElementById("pokemon-types");
     let type = document.createElement("span");
-        type.innerText = "?????";
-        type.classList.add("type-box");
-        type.classList.add("mystery");
-        typesDiv.append(type);
+    type.innerText = "?????";
+    type.classList.add("type-box");        
+    type.classList.add("mystery");
+    typesDiv.append(type);
 }
 
 
